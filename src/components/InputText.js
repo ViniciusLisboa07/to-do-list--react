@@ -3,12 +3,16 @@ import styled from 'styled-components';
 
 
 const InputBox = styled.input`
-border: 2px solid black;
-width: 350px;
-height: 20px;
-padding: 15px;
-font-size: 17px;
-`;
+    background-color: #1F2933;
+    color: white;
+    border: 1px solid #121212;
+    border-radius: 5px;
+    width: 350px;
+    height: 20px;
+    padding: 15px;
+    font-size: 17px;
+    outline: none;
+    `;
 
 function InputText(props) {
     

@@ -35,20 +35,21 @@ function App() {
 
       <hr></hr>
 
-      <ul className="listaItems">
+      <div className="listaItems">
         {list.map((item, index) => {
           return (
-            <li key={index} onClick={() => handleToggleDone(index)}>
+            <div className="itemClass" key={index} onClick={() => handleToggleDone(index)}>
               {item.done &&
-                <del>{item.title}</del>
+                item.title
               }
               {!item.done &&
                 item.title
               }
-            </li>
+              <input className="checkboxInput" type="checkbox"></input>
+            </div>
           );
         })}
-      </ul>
+      </div>
     
     </div>
   );
