@@ -4,28 +4,26 @@ import InputText from './components/InputText'
 import './App.css';
 
 function App() {
-
   const [list, setList] = useState([]);
+  console.log(list)
+  
 
-  useEffect(() => {
+  function addAction(newItem) {
 
-    setList([
-      { title: 'Teste 1', done: true },
-      { title: 'Teste 2', done: false },
-      { title: 'Teste 3', done: false },
-    ]);
+    let item = { title: newItem, done: false };
+    let newList = [...list, item];
+    // localStorage.setItem(newItem, false);
 
-    function addAction(newItem) {
-      let newList = list;
-      newList.push({
-        title: newItem,
-        done: false
-      });
+    setList(newList);
+  };
 
-      setList(newList);
-    }
+  function handleToggleDone(index) {
+    let newList = [...list];
+    newList[index].done = !newList[index].done;
 
-  }, [])
+    setList(newList);
+  }
+
 
   return (
     <div>
@@ -40,7 +38,7 @@ function App() {
       <ul className="listaItems">
         {list.map((item, index) => {
           return (
-            <li key={index}>
+            <li key={index} onClick={() => handleToggleDone(index)}>
               {item.done &&
                 <del>{item.title}</del>
               }
@@ -51,6 +49,7 @@ function App() {
           );
         })}
       </ul>
+    
     </div>
   );
 }
