@@ -3,6 +3,23 @@ body{
   background-color: #121212;
 }
 
+.Title {
+  text-decoration: none;
+}
+
+.Title::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #fff;
+  transition: width .3s;
+}
+
+.Title:hover::after {
+  width: 17.5%;
+}
+
 ::placeholder {
   color: #cecece;
   opacity: 1; /* Firefox */

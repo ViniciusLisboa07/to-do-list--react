@@ -27,23 +27,22 @@ function App() {
 
   return (
     <div>
-      <h1>Lista de tarefas</h1>
+      <h1 className="Tit">Lista de tarefas</h1>
       <InputText
         placeholder="Adicione um item..."
         onEnter={addAction}
       />
 
       <hr></hr>
-
       <div className="listaItems">
         {list.map((item, index) => {
           return (
             <div className="itemClass" key={index} onClick={() => handleToggleDone(index)}>
-              {item.done &&
-                item.title
-              }
               {!item.done &&
                 item.title
+              }
+              {item.done &&
+                <del>{item.title}</del>
               }
               <input className="checkboxInput" type="checkbox"></input>
             </div>

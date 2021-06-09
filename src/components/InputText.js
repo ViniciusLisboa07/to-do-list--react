@@ -1,17 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-
 const InputBox = styled.input`
     background-color: #1F2933;
-    color: white;
     border: 1px solid #121212;
     border-radius: 5px;
+    color: white;
     width: 350px;
     height: 20px;
     padding: 15px;
     font-size: 17px;
     outline: none;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.2s;
+
+    &:hover{
+        cursor:pointer;
+        background-color: #181e24;
+    }
+
+    &:after {
+        content: 't';
+    }
     `;
 
 function InputText(props) {
